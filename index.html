@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NEXUS Launcher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">N</div>
+      <span>NEXUS</span>
+    </div>
+    <nav>
+      <button class="nav active" data-page="builds">▦ <span>Сборки</span></button>
+      <button class="nav" data-page="profile">◉ <span>Профиль</span></button>
+    </nav>
+    <div class="side-bottom">
+      <div class="user">
+        <div class="avatar">N</div>
+        <div>
+          <b id="sidebarNick">Player</b>
+          <small>Оффлайн профиль</small>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main">
+    <header class="top">
+      <div>
+        <small class="eyebrow">MINECRAFT LAUNCHER</small>
+        <h1 id="pageTitle">Сборки</h1>
+      </div>
+      <button class="green" id="newBtn">＋ Новая сборка</button>
+    </header>
+    <section id="content"></section>
+  <div id="updateNotice" class="update-notice hidden" role="dialog" aria-live="polite"><div class="update-inner"><h3 id="updateTitle">Обновление NEXUS</h3><p id="updateText">Доступно обновление.</p><div class="update-progress"><div id="updateBar"></div></div><small id="updateDetails"></small><div class="update-actions"><button class="outline" id="updateLater">Позже</button><button class="green" id="updateApprove">Обновить</button></div></div></div>
+  </main>
+
+  <!-- Create build modal -->
+  <div class="modal-back" id="modal">
+    <div class="modal">
+      <div class="modal-head">
+        <h2>Создать сборку</h2>
+        <button id="closeModal" class="iconbtn" type="button">×</button>
+      </div>
+      <label>
+        Название сборки
+        <input id="buildName" placeholder="Например, Survival" maxlength="48">
+      </label>
+      <div class="two">
+        <label>
+          Версия Minecraft
+          <input id="version" value="1.21.4">
+        </label>
+        <label>
+          Ядро
+          <select id="loader">
+            <option>Vanilla</option>
+            <option>Fabric</option>
+            <option>Forge</option>
+            <option>NeoForge</option>
+            <option>Quilt</option>
+          </select>
+        </label>
+      </div>
+      <label>
+        Оперативная память <span id="ramValue">4 GB</span>
+        <input type="range" id="ram" min="2" max="16" value="4">
+      </label>
+      <button class="green full" id="createBtn" type="button">Создать сборку</button>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
